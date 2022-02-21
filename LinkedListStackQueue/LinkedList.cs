@@ -31,10 +31,13 @@ namespace LinkedListStackQueue
             {
                 if (tempNode.data.Equals(data))
                 {
-
+                    formerNode.next = tempNode.next;
+                    count--;
+                    return true;
                 }
+                formerNode = tempNode;
+                tempNode = tempNode.next;
             }
-            count--;
             return false;
         }
 
@@ -128,18 +131,19 @@ namespace LinkedListStackQueue
     {
         public static void Run()
         {
-            SeunLinkedList<object> num = new SeunLinkedList<object>();
+            SeunLinkedList<int> num = new SeunLinkedList<int>();
             SeunLinkedList<string> letters = new SeunLinkedList<string>();
             num.AddToFront(1);
             num.AddToFront(2);
             num.AddToFront(5);
             num.AddToFront(4);
-            num.AddToFront("nawa");
+            /*num.AddToFront("nawa");*/
             num.AddToFront(53);
             num.AddToFront(53);
             num.AddToFront(53);
             num.Show();
-            Console.WriteLine(num.Index("nawa"));
+            Console.WriteLine(num.Remove(23));
+            num.Show();
         }
     }
 }
