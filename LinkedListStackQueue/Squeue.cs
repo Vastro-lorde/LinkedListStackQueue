@@ -6,58 +6,15 @@ namespace LinkedListStackQueue
 {
     internal class Squeue<T>
     {
-        private Snode<T> head;
-        public int count;
-
-        public Squeue() { head = null; }
-        public int Size() { return count; }
-
-        public void Enqueue(T data)
-        {
-            Snode<T> newNode = new Snode<T>(data);
-
-            if (head == null)
-            {
-                head = newNode;
-                return;
-            }
-
-            Snode<T> temp = head;
-            while (temp.next != null)
-            {
-                temp = temp.next;
-            }
-            temp.next = newNode;
-
-            count++;
-        }
-
-        public void Dequeue()
-        {
-            if (head == null) return;
-            var tempNode = head.next;
-            var formerNode = head;
-            head = tempNode;
-            count--;
-        }
-        public void Print()
-        {
-            Snode<T> seunNode = head;
-            Console.Write("[");
-            while (seunNode != null)
-            {
-                Console.Write($"{seunNode.data},");
-                seunNode = seunNode.next;
-            }
-            Console.Write("]");
-        }
-        public bool IsEmpty()
-        {
-            if (head == null)
-            {
-                return true;
-            }
-            return false;
-        }
+        // Constructor and property
+        public SLinkedList<T> sQueue;
+        public Squeue() { sQueue = new SLinkedList<T>(); }
+        
+        // Methods
+        public void Enqueue(T data) => sQueue.AddToBack(data);
+        public void Dequeue() => sQueue.Remove(sQueue.head.data);
+        public void Print() => sQueue.Show();
+        public bool IsEmpty() => sQueue.IsEmpty();
+        public int Size() => sQueue.count;
     }
 }

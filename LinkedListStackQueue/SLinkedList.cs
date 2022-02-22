@@ -5,12 +5,12 @@ using System.Text;
 namespace LinkedListStackQueue
 {
 
-    public class SeunLinkedList<T>
+    public class SLinkedList<T>
     {
-        private Snode<T> head;
-        private int count;
+        public Snode<T> head;
+        public int count;
 
-        public SeunLinkedList() { head = null; }
+        public SLinkedList() { head = null; }
         public int GetCount() { return count; }
 
         public bool IsNull(Snode<T> data) { bool result = data == null ? true : false;  return result; }

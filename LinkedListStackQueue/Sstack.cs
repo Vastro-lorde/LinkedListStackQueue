@@ -6,53 +6,23 @@ namespace LinkedListStackQueue
 {
     class Sstack<T>
     {
-        private Snode<T> head;
-        public int count;
+        public SLinkedList<T> sStack;
 
-        public Sstack() { head = null; }
-        public int Size() { return count; }
-        public  void Push(T data)
-        {
-            Snode<T> newNode = new Snode<T>(data);
-
-            if (head == null)
-            {
-                head = newNode;
-                return;
-            }
-            Snode<T> temp = head;
-            head = newNode;
-            head.next = temp;
-            count++;
-        }
+        public Sstack() { sStack = new SLinkedList<T>(); }
+        public void Push(T data) => sStack.AddToFront(data);
         public T Pop()
         {
-            if (head == null) throw new Exception("Empty List");
-            var temp = head;
-            head = head.next;
-            count--;
-            return temp.data;
+            var deleted = sStack.head.data;
+            sStack.Remove(sStack.head.data);
+            return deleted;
         }
         public object Peek()
         {
-            if (head == null) throw new Exception("Empty List");
-            return head.data;
+            if (sStack.head == null) throw new Exception("Empty List");
+            return sStack.head.data;
         }
-        public bool IsEmpty()
-        {
-            if (head == null) return true;
-            return false;
-        }
-        public void Print()
-        {
-            Snode<T> seunNode = head;
-            Console.Write("[");
-            while (seunNode != null)
-            {
-                Console.Write($"{seunNode.data},");
-                seunNode = seunNode.next;
-            }
-            Console.Write("]");
-        }
+        public bool IsEmpty() => sStack.IsEmpty();
+        public int Size() => sStack.count;
+        public void Print() => sStack.Show();
     }
 }
