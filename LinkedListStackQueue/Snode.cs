@@ -14,10 +14,6 @@ namespace LinkedListStackQueue
             this.data = data;
             next = null;
         }
-        /*public object getValue() { return data; }
-        public void setValue(int value) { this.data = value; }
-        public SeunNode getNext() { return next; }
-        public void setNext(SeunNode next) { this.next = next; }*/
       
     }
 }

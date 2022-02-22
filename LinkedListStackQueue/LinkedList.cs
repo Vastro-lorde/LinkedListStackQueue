@@ -14,11 +14,11 @@ namespace LinkedListStackQueue
         public SeunLinkedList() { head = null; }
         public int GetCount() { return count; }
 
-        public bool IsNull(T data) { bool result = data == null ? true : false;  return result; }
+        public bool IsNull(Snode<T> data) { bool result = data == null ? true : false;  return result; }
         
         public bool Remove(T data)
         {
-            if (IsNull(head.data)) return false;
+            if (IsNull(head)) return false;
             var tempNode = head.next;
             var formerNode = head;
             if (head.data.Equals(data))
@@ -27,7 +27,7 @@ namespace LinkedListStackQueue
                 count--;
                 return true;
             }
-            while (!IsNull(tempNode.data))
+            while (!IsNull(tempNode))
             {
                 if (tempNode.data.Equals(data))
                 {
@@ -61,13 +61,13 @@ namespace LinkedListStackQueue
         {
             Snode<T> newNode = new Snode<T>(data);
 
-            if (tail == null)
+            if (head == null)
             {
-                tail = newNode;
+                head = newNode;
                 return;
             }
 
-            Snode<T> temp = tail;
+            Snode<T> temp = head;
             while (temp.next != null)
             {
                temp = temp.next;
@@ -77,18 +77,39 @@ namespace LinkedListStackQueue
             count++;
         }
 
+        public bool Check(T data)
+        {
+            if (head != null)
+            {
+                if (head.Equals(data))
+                {
+                    return true;
+                }
+                Snode<T> sTemp = head;
+                while (sTemp != null)
+                {
+                    if (sTemp.data.Equals(data))
+                    {
+                        return true;
+                    }
+                    sTemp = sTemp.next;
+                }
+            }
+            return false;
+        }
+
         //  gets the index of the data in the linked list
         public int Index(T data)
         {
             
             int index = 0;
-            if (!IsNull(head.data))
+            if (!IsNull(head))
             {
                 var sTempH = head;
                 var sTempN = head.next;
                 index++;
                 if (sTempH.data.Equals(data)) return 0;
-                while (!IsNull(sTempN.data))
+                while (!IsNull(sTempN))
                 {
                     if (sTempN.data.Equals(data)) return index;
                     sTempH = sTempN;
@@ -98,6 +119,14 @@ namespace LinkedListStackQueue
 
             }
             return index;
+        }
+        public bool IsEmpty()
+        {
+            if (head == null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void PrintForward()
@@ -141,8 +170,11 @@ namespace LinkedListStackQueue
             num.AddToFront(53);
             num.AddToFront(53);
             num.AddToFront(53);
+            
             num.Show();
-            Console.WriteLine(num.Remove(23));
+            Console.WriteLine(num.Remove(53));
+            num.AddToBack(132);
+            num.AddToBack(123);
             num.Show();
         }
     }
