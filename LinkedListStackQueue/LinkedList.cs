@@ -8,7 +8,6 @@ namespace LinkedListStackQueue
     public class SeunLinkedList<T>
     {
         private Snode<T> head;
-        private Snode<T> tail;
         public int count;
 
         public SeunLinkedList() { head = null; }
@@ -129,17 +128,7 @@ namespace LinkedListStackQueue
             return false;
         }
 
-        public void PrintForward()
-        {
-            Snode<T> seunNode = tail;
-            while (seunNode != null)
-            {
-                Console.Write($"{seunNode.data},");
-                seunNode = seunNode.next;
-            }
-        }
-
-        public void PrintBackward()
+        public void Print()
         {
             Snode<T> seunNode = head;
             while (seunNode != null)
@@ -148,34 +137,13 @@ namespace LinkedListStackQueue
                 seunNode = seunNode.next;
             }
         }
+
         // Prints all SeunNode data out in console with {}.
-        public void Show()
+        public void Show(int num)
         {
-            Console.Write("[");
-            PrintBackward();
-            Console.Write("]");
-        }
-    }
-    public class MyLinkedList
-    {
-        public static void Run()
-        {
-            SeunLinkedList<int> num = new SeunLinkedList<int>();
-            SeunLinkedList<string> letters = new SeunLinkedList<string>();
-            num.AddToFront(1);
-            num.AddToFront(2);
-            num.AddToFront(5);
-            num.AddToFront(4);
-            /*num.AddToFront("nawa");*/
-            num.AddToFront(53);
-            num.AddToFront(53);
-            num.AddToFront(53);
-            
-            num.Show();
-            Console.WriteLine(num.Remove(53));
-            num.AddToBack(132);
-            num.AddToBack(123);
-            num.Show();
+                Console.Write("[");
+                Print();
+                Console.Write("]");
         }
     }
 }
