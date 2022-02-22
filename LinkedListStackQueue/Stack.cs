@@ -4,8 +4,9 @@ using System.Text;
 
 namespace LinkedListStackQueue
 {
-    internal class Stack
+    internal class Stack<T>
     {
+        private Snode<T> data;
         public void Push()
         {
 
