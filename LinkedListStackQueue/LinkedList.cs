@@ -16,6 +16,8 @@ namespace LinkedListStackQueue
 
         public bool IsNull(T data) { bool result = data == null ? true : false;  return result; }
         
+
+
         public bool Remove(T data)
         {
             if (IsNull(head.data)) return false;
