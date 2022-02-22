@@ -25,30 +25,22 @@ namespace LinkedListStackQueue
             head.next = temp;
             count++;
         }
-        public object Pop()
+        public T Pop()
         {
-            if (head == null) return null;
+            if (head == null) throw new Exception("Empty List");
             var temp = head;
             head = head.next;
             count--;
             return temp.data;
         }
-
         public object Peek()
         {
-            if (head == null)
-            {
-                return null;
-            }
+            if (head == null) throw new Exception("Empty List");
             return head.data;
         }
-
         public bool IsEmpty()
         {
-            if (head == null)
-            {
-                return true;
-            }
+            if (head == null) return true;
             return false;
         }
         public void Print()
