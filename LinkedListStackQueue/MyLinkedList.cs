@@ -10,19 +10,31 @@ namespace LinkedListStackQueue
         {
             SeunLinkedList<int> num = new SeunLinkedList<int>();
             SeunLinkedList<string> letters = new SeunLinkedList<string>();
-            num.AddToFront(1);
-            num.AddToFront(2);
-            num.AddToFront(5);
-            num.AddToFront(4);
-            num.AddToFront(53);
-            num.AddToFront(53);
-            num.AddToFront(53);
+            num.AddToBack(23);
+            num.AddToBack(68);
+            num.AddToBack(48);
+            num.AddToBack(8);
+            num.AddToFront(10);
+            num.AddToFront(13);
+            Console.WriteLine(num.Check(23));
+            Console.WriteLine(num.Index(10));
+            Console.WriteLine(num.GetCount());
+            num.Show();
 
-            num.Show(0);
-            Console.WriteLine();
-            num.AddToBack(132);
-            num.AddToBack(123);
-            num.Show(1);
+            Sstack<int> seunstack = new Sstack<int>();
+            Console.WriteLine(seunstack.Peek());
+            seunstack.Push(2342);
+            seunstack.Push(65);
+            seunstack.Push(2);
+            seunstack.Push(6543);
+            seunstack.Push(78);
+            seunstack.Push(65); 
+            seunstack.Print();
+            Console.WriteLine(seunstack.Pop());
+            seunstack.Print();
+            Console.WriteLine(seunstack.Size());
+            Console.WriteLine(seunstack.Peek());
+
         }
     }
 }

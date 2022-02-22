@@ -8,7 +8,7 @@ namespace LinkedListStackQueue
     public class SeunLinkedList<T>
     {
         private Snode<T> head;
-        public int count;
+        private int count;
 
         public SeunLinkedList() { head = null; }
         public int GetCount() { return count; }
@@ -41,19 +41,20 @@ namespace LinkedListStackQueue
         }
 
         // Adds data to the end => Push();
-        public void AddToFront(T data)
+        public int AddToFront(T data)
         {
             Snode<T> newNode = new Snode<T>(data);
 
             if (head == null)
             {
                 head = newNode;
-                return;
+                return 0;
             }
             Snode<T> temp = head;
             head = newNode;
             head.next = temp;
             count++;
+            return count;
         }
 
         public void AddToBack(T data)
@@ -139,7 +140,7 @@ namespace LinkedListStackQueue
         }
 
         // Prints all SeunNode data out in console with {}.
-        public void Show(int num)
+        public void Show()
         {
                 Console.Write("[");
                 Print();
