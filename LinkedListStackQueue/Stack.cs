@@ -6,5 +6,13 @@ namespace LinkedListStackQueue
 {
     internal class Stack
     {
+        public void Push()
+        {
+
+        }
+        public void Pop()
+        {
+
+        }
     }
 }
