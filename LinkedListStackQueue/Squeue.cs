@@ -8,7 +8,9 @@ namespace LinkedListStackQueue
     {
         // Constructor and property
         public SLinkedList<T> sQueue;
-        public Squeue() { sQueue = new SLinkedList<T>(); }
+        public Squeue() {
+            sQueue = new SLinkedList<T>(); 
+        }
         
         // Methods
         public void Enqueue(T data) => sQueue.AddToBack(data);
