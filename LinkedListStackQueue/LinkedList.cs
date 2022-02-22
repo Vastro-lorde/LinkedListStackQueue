@@ -57,14 +57,14 @@ namespace LinkedListStackQueue
             return count;
         }
 
-        public void AddToBack(T data)
+        public int AddToBack(T data)
         {
             Snode<T> newNode = new Snode<T>(data);
 
             if (head == null)
             {
                 head = newNode;
-                return;
+                return 0;
             }
 
             Snode<T> temp = head;
@@ -74,7 +74,7 @@ namespace LinkedListStackQueue
             }
             temp.next = newNode;
             
-            count++;
+            return count++;
         }
 
         public bool Check(T data)

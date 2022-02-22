@@ -6,7 +6,7 @@ namespace LinkedListStackQueue
     {
         static void Main(string[] args)
         {
-            MyLinkedList.Run();
+            Sdata.Run();
         }
     }
 }
