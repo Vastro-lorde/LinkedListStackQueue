@@ -8,7 +8,7 @@ namespace LinkedListStackQueue
     {
         public static void Run()
         {
-            /*SLinkedList<int> num = new SLinkedList<int>();
+            SLinkedList<int> num = new SLinkedList<int>();
             SLinkedList<string> letters = new SLinkedList<string>();
             num.AddToBack(23);
             num.AddToBack(68);
@@ -19,9 +19,9 @@ namespace LinkedListStackQueue
             Console.WriteLine(num.Check(23));
             Console.WriteLine(num.Index(10));
             Console.WriteLine(num.GetCount());
-            num.Show();*/
+            num.Show();
 
-            /*Sstack<int> seunStack = new Sstack<int>();
+            Sstack<int> seunStack = new Sstack<int>();
             seunStack.Push(2342);
             seunStack.Push(65);
             seunStack.Push(2);
@@ -32,7 +32,7 @@ namespace LinkedListStackQueue
             Console.WriteLine(seunStack.Pop());
             seunStack.Print();
             Console.WriteLine(seunStack.Size());
-            Console.WriteLine(seunStack.Peek());*/
+            Console.WriteLine(seunStack.Peek());
 
             Squeue<string> sQueue = new Squeue<string>();
             sQueue.Enqueue("1");

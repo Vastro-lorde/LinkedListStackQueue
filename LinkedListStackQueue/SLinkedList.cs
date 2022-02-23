@@ -128,7 +128,7 @@ namespace LinkedListStackQueue
             }
             return false;
         }
-
+        // Prints each 
         public void Print()
         {
             Snode<T> seunNode = head;
