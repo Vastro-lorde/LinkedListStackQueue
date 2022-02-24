@@ -8,7 +8,6 @@ namespace LinkedListStackQueue
     {
         public T data;
         public Snode<T> next;
-
         public Snode(T data)
         {
             this.data = data;

@@ -11,7 +11,6 @@ namespace LinkedListStackQueue
         public Squeue() {
             sQueue = new SLinkedList<T>(); 
         }
-        
         // Methods
         public void Enqueue(T data) => sQueue.AddToBack(data);
         public void Dequeue() => sQueue.Remove(sQueue.head.data);
